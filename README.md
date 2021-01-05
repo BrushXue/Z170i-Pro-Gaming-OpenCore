@@ -1,6 +1,8 @@
 # Z170i-Pro-Gaming-OpenCore
 [中文版本](README_zh-cn.md)
 
+I am not a professional developer. I am just an enthusiast following the official documentation and sharing this working EFI. Similar configuration (Z170+skylake) might still work with minor modifications but I can't guarantee. If you have any debugging questions, please ask the author of the kext!
+
 This is an OpenCore version of ASUS Z170i Pro Gaming Hackintosh EFI. It works on macOS Big Sur (11.0.1). FCPX GPU rendering works smoothly. HDR can be enabled. Sleep, Airdrop and Handoff are supported.
 
 Big Sur requires OpenCore 0.6.3. Please update EFI first then upgrade macOS.

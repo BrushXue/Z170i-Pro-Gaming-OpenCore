@@ -1,4 +1,7 @@
 # 华硕Z170i Pro Gaming黑苹果Opencore
+
+我不是专业码农。我只是一名爱好者，按照官方文档制作并分享本EFI。相似的硬件配置（Z170+Skylake）理论上稍加修改也可以使用本EFI，但是我不做任何保证！有关调试的问题请去问kext原作者！
+
 本EFI可在macOS Big Sur (11.0.1)上驱动。FCPX显卡渲染正常工作。HDR可正常开启。支持睡眠，隔空投送和接力。
 ![image](Screenshot_en-us.png)
 
