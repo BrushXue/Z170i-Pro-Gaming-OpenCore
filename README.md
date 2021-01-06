@@ -12,7 +12,7 @@ Big Sur requires OpenCore 0.6.3. Please update EFI first then upgrade macOS.
 ## Notes
 1. Remember to clear NVRAM when switching between Clover and OpenCore.
 2. I strongly recommend Xcode or other plist editors instead of OpenCore Configurator, as the plist structure changes in every update.
-3. If you don't have a dGPU, i.e. output via iGPU, refer to [this guide](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/skylake.html#add_1) to modify `/EFI/OC/config.plist` -> `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`.
+3. If you don't have a dGPU, i.e. output via iGPU, refer to [this fork](https://github.com/berikiushi/Z170i-Pro-Gaming-OpenCore).
 4. OpenCanopy and HiDPI are enabled. If you don't own a 4K monitor, disable it in `/EFI/OC/config.plist` -> `NVRAM/Add/4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14/UIScale`.
 5. I chose 15 USB ports in my USB map. 2x USB 3.0(front) + 4x USB 3.0(back) + 2x USB 2.0(back) + Bluetooth(internal via M.2) = 15 ports. Generally there's no front USB 2.0 port on ITX cases so I didn't include onboard USB 2.0 ports(HS11/HS12). I believe this is a reasonable trade-off for most people. However if you bought some strange Wi-Fi card which requires USB 2.0 header, you need follow [this guide](https://dortania.github.io/USB-Map-Guide/) to create your own USB map.
 6. For onboard 3.5mm audio output you need to plug into the green(line out) jack. If you restart from Windows, there will be no sound. This is a issue in the Windows Realtek driver as they modified the DSDT. Always shutdown from windows then boot to macOS.
