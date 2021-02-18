@@ -2,7 +2,7 @@
 
 我不是专业码农。我只是一名爱好者，按照官方文档制作并分享本EFI。相似的硬件配置（Z170+Skylake）理论上稍加修改也可以使用本EFI，但是我不做任何保证！有关调试的问题请去问kext原作者！
 
-本EFI可在macOS Big Sur (11.0.1)上驱动。FCPX显卡渲染正常工作。HDR可正常开启。支持睡眠，隔空投送和接力。
+本EFI可在macOS Big Sur (11.1)上驱动。FCPX显卡渲染正常工作。HDR可正常开启。支持睡眠，隔空投送和接力。
 ![image](Screenshot_en-us.png)
 
 Big Sur需要OpenCore 0.6.3，系统更新前请先更新EFI。
@@ -10,7 +10,7 @@ Big Sur需要OpenCore 0.6.3，系统更新前请先更新EFI。
 ## 注意事项
 1. 在Clover和OpenCore之间切换时请清除NVRAM。
 2. 强烈建议使用Xcode或其他plist编辑器。不推荐使用OpenCore Configurator，原因是每次OpenCore更新文件结构都在改变。
-3. 如果你没有独立显卡（核显输出），参考[这里](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/skylake.html#add_1)修改`/EFI/OC/config.plist` -> `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`。
+3. 如果你没有独立显卡（核显输出），参考[这里](https://github.com/berikiushi/Z170i-Pro-Gaming-OpenCore)。
 4. OpenCanopy和HiDPI默认开启。如果你没有4K显示器，请修改`/EFI/OC/config.plist` -> `NVRAM/Add/4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14/UIScale`。
 5. 我在USB映射里面加满了15个端口。2个USB 3.0(前置) + 4个USB 3.0(后置) + 2个USB 2.0(后置) + 蓝牙(内部M.2) = 15个端口。一般情况下ITX机箱没有前置USB 2.0接口所以我没有添加板载USB 2.0(HS11/HS12)。这项设定应该符合绝大多数人的需求。但如果你选购了一些奇奇怪怪的需要单独连USB 2.0的无线网卡, 参考[这里](https://dortania.github.io/USB-Map-Guide/)创建自己的USB映射。
 6. 板载声卡3.5mm输出需要接在绿色（LINE OUT）插孔上面。如果从Windows系统重新启动会没有声音，这是华硕声卡驱动的问题。每次从Windows重启进入macOS时请先关机再开机。
