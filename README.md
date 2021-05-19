@@ -9,10 +9,9 @@ This is an OpenCore version of ASUS Z170i Pro Gaming Hackintosh EFI. It works on
 
 ## Notes
 1. Mac boot chime is added. You may need to modify `config.plist/UEFI/Audio/AudioOut` based you motherboard layout.
-2. If you don't have a dGPU, i.e. output via iGPU, refer to [this fork](https://github.com/berikiushi/Z170i-Pro-Gaming-OpenCore).
-3. OpenCanopy and HiDPI are enabled. If you don't own a 4K monitor, disable it in `config.plist/NVRAM/Add/4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14/UIScale`.
-4. I chose 15 USB ports in my USB map. 2x USB 3.0(front) + 4x USB 3.0(back) + 2x USB 2.0(back) + Bluetooth(internal via M.2) = 15 ports. Generally there's no front USB 2.0 port on ITX cases so I didn't include onboard USB 2.0 ports(HS11/HS12). I believe this is a reasonable trade-off for most people. However if you bought some strange Wi-Fi card which requires USB 2.0 header, you need follow [this guide](https://dortania.github.io/USB-Map-Guide/) to create your own USB map.
-6. For onboard 3.5mm audio output you need to plug into the green(line out) jack. If you restart from Windows, there will be no sound. This is a issue in the Windows Realtek driver as they modified the DSDT. Always shutdown from windows then boot to macOS.
+2. OpenCanopy and HiDPI are enabled. If you don't own a 4K monitor, disable it in `config.plist/NVRAM/Add/4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14/UIScale`.
+3. I chose 15 USB ports in my USB map. 2x USB 3.0(front) + 4x USB 3.0(back) + 2x USB 2.0(back) + Bluetooth(internal via M.2) = 15 ports. Generally there's no front USB 2.0 port on ITX cases so I didn't include onboard USB 2.0 ports(HS11/HS12). I believe this is a reasonable trade-off for most people. However if you bought some strange Wi-Fi card which requires USB 2.0 header, you need follow [this guide](https://dortania.github.io/USB-Map-Guide/) to create your own USB map.
+4. For onboard 3.5mm audio output you need to plug into the green(line out) jack. If you restart from Windows, there will be no sound. This is a issue in the Windows Realtek driver as they modified the DSDT. Always shutdown from windows then boot to macOS.
 
 ![image](Z170iProGaming.jpg)
 
@@ -22,8 +21,7 @@ This is an OpenCore version of ASUS Z170i Pro Gaming Hackintosh EFI. It works on
 | Motherboard | ASUS | Z170i Pro Gaming | | |
 | CPU | Intel | i7-6700K | | |
 | RAM | G.SKILL | TridentZ 2x16GB DDR4 3000 | | Overclocked to 3200 |
-| iGPU | Intel | HD Graphics 530 | built-in | Headless mode |
-| dGPU | XFX | RX 580 GTS XXX Edition 8GB | built-in | 2304 SP |
+| iGPU | Intel | HD Graphics 530 | built-in | |
 | SSD | Samsung | SM961 1TB NVMe | [NVMeFix](https://github.com/acidanthera/NVMeFix) | |
 | Wireless | Broadcom | BCM94360NG M.2 | built-in | QCA61x4A was replaced* |
 | Ethernet | Intel | I219-V | [IntelMausi](https://github.com/acidanthera/IntelMausi) | |
@@ -41,7 +39,7 @@ This is an OpenCore version of ASUS Z170i Pro Gaming Hackintosh EFI. It works on
 | CFG Lock | Disabled |
 | VT-d | Disabled |
 | Above 4G Decoding | Enabled |
-| Primary Display | PCIE |
+| Primary Display | CPU |
 | iGPU-Multi-Monitor | Enabled |
 | DVMT Pre-Allocated | 128M |
 | IOAPIC 24-119 Entries | Disabled |
@@ -50,9 +48,6 @@ This is an OpenCore version of ASUS Z170i Pro Gaming Hackintosh EFI. It works on
 | Fast Boot | Disabled |
 | OS Type | Other OS |
 | Launch CSM | Disabled |
-
-## Known issue
-GPU fan spins at max RPM for several seconds during boot occasionally and runs normally in desktop. This is a XFX BIOS bug. The problem can be solved by flashing other similar RX 580 BIOS.
 
 ## Acknowledgement
 Apple for macOS
